@@ -208,6 +208,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\style.css" />
     <Content Include="Pictures\bb.jpg" />
     <Content Include="Content\angular-bootstrap-toggle.css" />
     <Content Include="Content\background.css" />
@@ -217,6 +218,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Pictures\medicamente-1000x500.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-bootstrap-toggle.js" />

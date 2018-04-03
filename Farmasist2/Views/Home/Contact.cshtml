@@ -1,17 +1,87 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div class="row">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @*Panel 1*@
+    <br /> </br>
+    <div class="col-md-4">
+        <!--Added containing column definition-->
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h4>Cauta Pacient</h4></div>
+            <div class="panel-body">
+                <div class="text-center">
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+                    <form asp-controller="CNP" asp-action="Contact" method="get">
+                        <p>
+                            CNP: <input type="text" name="">
+                            <input type="submit" value="Cautare" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    @*Panel 2*@
+    <div class="col-md-4">
+        <!--Added containing column defition-->
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h4>Programari Lista</h4></div>
+            <div class="panel-body">
+                <div class="text-center">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <div class="container">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default">Afisare</button>
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Prima programare</a></li>
+                                            <li><a href="#">A doua programare</a></li>
+                                            <li><a href="#">A treia programare</a></li>
+                                            <li><a href="#">A patra programare</a></li>
+                                            <li><a href="#">A cincea programare</a></li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Panel 3*@
+    <div class="col-md-4">
+        <!-- Added containing column definition -->
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h4>Farmacie</h4></div>
+            <div class="panel-body">
+                <div class="text-center">
+                    <div class="container">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">Medicament</button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Farma1</a></li>
+                                <li><a href="#">Farma2</a></li>
+                                <li><a href="#">Farma3</a></li>
+                                <li><a href="#">Farma4</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

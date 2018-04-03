@@ -1,0 +1,158 @@
+﻿body{
+  background: url('../Pictures/medicamente-1000x500.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-size: cover;
+}
+.rezervare-box{
+ width: 420px;
+ height: 540px;
+ background:rgba(245, 245, 245, 0.45);
+ color: #fff;
+ top: 100%;
+ left: -25%;
+ position: absolute;
+ transform: translate(-16);
+ box-sizing: border-box;
+ padding: 70px 30px;
+}
+.Raccepate-box{
+ width: 420px;
+ height: 540px;
+ background: rgba(245, 245, 245, 0.45);
+ color: #fff;
+ top: 220%;
+ left: 105%;
+ position: absolute;
+ transform: translate(-1000);
+ box-sizing: border-box;
+ padding: 70px 30px;
+}
+.Cautare-box{
+ width: 420px;
+ height: 540px;
+ background: rgba(245, 245, 245, 0.45);
+ color: #fff;
+ top: 820%;
+ left: 230%;
+ position: absolute;
+ transform: translate(-70);
+ box-sizing: border-box;
+ padding: 70px 30px;
+}
+
+h1{
+ margin: 0;
+ padding: 0 0 20px;
+ text-align: center; 
+ font-size: 30px;
+ color:darkblue;
+}
+
+h2{
+ margin: 0;
+ padding: 0 0 25px;
+ text-align: center;
+ font-size: 30px;
+ color:darkblue;
+ 
+}
+
+.rezervare-box p{
+ margin: 0;
+ padding: 0;
+ font-weight: bold;
+}
+.rezervare-box input{
+ width: 70%;
+ margin-bottom:10px;
+
+
+}
+.rezervare-box input[type="text"], [type="password"]
+{
+ border: none;
+ border-bottom: 5px solid #fff;
+ background: transparent;
+ outline: none;
+ height: 65px;
+ color:darkslateblue;
+ font-size: 20px;
+}
+.rezervare-box input[type="submit"]
+{
+ border: none;
+ outline: none;
+ height: 70px;
+ background: #1c8adb;
+ color: darkslateblue;
+  font-size: 18px;
+ border-radius: 20px;
+}
+
+
+
+
+.Raccepate-box p{
+ margin: 0;
+ padding: 0;
+ font-weight: bold;
+}
+.Raccepate-box input{
+ width: 70%;
+ margin-bottom:10px;
+}
+.Raccepate-box input[type="text"], [type="password"]
+{
+ border: none;
+ border-bottom: 5px solid #fff;
+ background: transparent;
+ outline: none;
+ height: 65px;
+ color:darkslateblue;
+ font-size: 20px;
+}
+.Raccepate-box input[type="submit"]
+{
+ border: none;
+ outline: none;
+ height: 70px;
+ background: #1c8adb;
+ color: darkslateblue;
+  font-size: 18px;
+ border-radius: 20px;
+}
+
+
+.Cautare-box p{
+ margin: 0;
+ padding: 0;
+ font-weight: bold;
+}
+.Cautare-box input{
+ width: 70%;
+ margin-bottom:7px;
+}
+.Cautare-box input[type="text"], [type="password"]
+{
+ border: none;
+ border-bottom: 5px solid #fff;
+ background: transparent;
+ outline: none;
+ height: 55px;
+ color:darkslateblue;
+ font-size: 20px;
+}
+.Cautare-box input[type="submit"]
+{
+ border: none;
+ outline: none;
+ height: 70px;
+ background: #1c8adb;
+ color: darkslateblue;
+  font-size: 20px;
+ border-radius: 29px;
+}
+
+.Bu

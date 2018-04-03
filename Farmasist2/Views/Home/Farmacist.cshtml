@@ -2,48 +2,57 @@
     ViewBag.Title = "Farmacist";
 }
 <div class="row">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" media="screen">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    @*PANEL 1*@
-    <br /> <br />
+
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css"
+       
+        <br /> <br />
+  <br/>
+    <br />
+   
     <div class="col-md-4">
-        <!-- Added containing column definition -->
-        <div class="panel panel-primary">
-            <div class="panel-heading"><h4>AAA</h4></div>
-            <div class="panel-body">
-                <div class="text-center">
-
-                </div>
-            </div> <!-- Missing div here -->
+        <!-- Rezerari -->
+        <div class="rezervare-box">
+            <h1>Rezervări  </h1>
+            <form>
+              
+                <input type="text" name="name" placeholder="Paracetamol "/><a href="#demo" data-toggle="collapse" style="color:red;">Răspuns</a>
+                <div id="demo" class="collapse">
+                    <i class="fa fa-check" style="color:darkblue; font-size:xx-large;"></i>
+                    <i class="fa fa-close" style="color:darkblue; font-size:xx-large;  width:30%; "></i>
+                                 </div>
+                <input type="text" name="name" placeholder="Aspirina"><a href="#demo" data-toggle="collapse" style="color:red";>Răspuns</a>
+                <input type="text" name="name" placeholder="Nurofen"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                <input type="text" name="name" placeholder="Algocalmin">     <a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                </form>
         </div>
-    </div>
-
-    @*PANEL 2*@
-    <div class="col-md-4">
-        <!-- Added containing column definition -->
-        <div class="panel panel-primary">
-            <div class="panel-heading"><h4>BBB</h4></div>
-            <div class="panel-body">
-                <div class="text-center">
-
-                </div>
-            </div>
+        <!----------->
+        <!-----Rezervari aprobate-->
+        <div class="Raccepate-box">
+            <h2>Rezervări aprobate</h2>
+            <form>
+             <input type="text" name="name" placeholder="Paracetamol 5 buc. " /><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                <input type="text" name="name" placeholder="Aspirina 3 buc"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                <input type="text" name="name" placeholder="Nurofen 8 buc"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                <input type="text" name="name" placeholder="Algocalmin 2 buc">     <a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+            </form>
         </div>
-    </div>
-
-    @*PANEL 3*@
-    <div class="col-md-4">
-        <!-- Added containing column definition -->
-        <div class="panel panel-primary">
-            <div class="panel-heading"><h4>CCC</h4></div>
-            <div class="panel-body">
-                <div class="text-center">
-
-                </div>
-
-            </div>
+        <!---------------->
+        <!------Cautare medicament-->
+        <div class="Cautare-box">
+            <h2>Căutare medicament</h2>
+            <form>
+                <input type="text" name="name" placeholder="Introduceți numele" /><i class="fa fa-search" style=" color:darkblue"></i>
+                <input type="text" name="name" placeholder="Paracetamol 9 buc" />
+                <input type="text" name="name" placeholder="Aspirina 3 buc">
+                <input type="text" name="name" placeholder="Nurofen 7 buc">
+                <input type="text" name="name" placeholder="Algocalmin 8 buc">   
+            </form>
         </div>
+       <!--------------->
     </div>
-</div>
 
 
