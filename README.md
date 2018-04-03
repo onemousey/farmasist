@@ -1,4 +1,2 @@
 # farmasist
-SIIS 1st Year / 2nd Semester Project
-
-Test !!!!!!!
+SIIS 1st Year / 2nd Semester Project :)
