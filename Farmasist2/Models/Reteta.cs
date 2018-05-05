@@ -7,6 +7,7 @@ namespace Farmasist2.Models
 {
     public class Reteta
     {
+        public string Nume_medic { get; set; }
         public string Nume_pacient { get; set; }
         public string Diagnostic { get; set; }
         public string Medicament1 { get; set; }
