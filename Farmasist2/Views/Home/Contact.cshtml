@@ -93,21 +93,36 @@
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="medicament1" placeholder="Medicament 1">
                                                 </div>
+                                                <div class="col-sm-2">
+                                                    <input type="number" class="form-control" id="cant1" placeholder="buc.">
+                                                </div>
                                                 <label for="medicament2" class="col-sm-4 col-form-label">Medicament 2</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="medicament2" placeholder="Medicament 2">
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <input type="number" class="form-control" id="cant2" placeholder="buc.">
                                                 </div>
                                                 <label for="medicament3" class="col-sm-4 col-form-label">Medicament 3</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="medicament3" placeholder="Medicament 3">
                                                 </div>
+                                                <div class="col-sm-2">
+                                                    <input type="number" class="form-control" id="cant3" placeholder="buc.">
+                                                </div>
                                                 <label for="medicament4" class="col-sm-4 col-form-label">Medicament 4</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="medicament4" placeholder="Medicament 4">
                                                 </div>
+                                                <div class="col-sm-2">
+                                                    <input type="number" class="form-control" id="cant4" placeholder="buc.">
+                                                </div>
                                                 <label for="medicament5" class="col-sm-4 col-form-label">Medicament 5</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="medicament5" placeholder="Medicament 5">
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <input type="number" class="form-control" id="cant5" placeholder="buc.">
                                                 </div>
                                             </div>
                                         </form>
@@ -119,10 +134,15 @@
                                                 onclick="creazaReteta($('#numePacient').val(),
                                                                         $('#diagnostic').val(),
                                                                         $('#medicament1').val(),
+                                                                        $('#cant1').val(),
                                                                         $('#medicament2').val(),
+                                                                        $('#cant2').val(),
                                                                         $('#medicament3').val(),
+                                                                        $('#cant3').val(),
                                                                         $('#medicament4').val(),
-                                                                        $('#medicament5').val())">Creare reteta</button>
+                                                                        $('#cant4').val(),
+                                                                        $('#medicament5').val(),
+                                                                        $('#cant5').val())">Creare reteta</button>
                                     </div>
                                 </div>
                             </div>
@@ -136,15 +156,20 @@
 @section Scripts {
     <script src="~/Scripts/ModulMedic_CautareMedicament.js"></script>
     <script>
-        function creazaReteta(nume_pacient, diagnostic, medicament_1, medicament_2, medicament_3, medicament_4, medicament_5) {
+        function creazaReteta(nume_pacient, diagnostic, medicament_1, cant_1, medicament_2, cant_2, medicament_3, cant_3, medicament_4, cant_4, medicament_5, cant_5) {
             var postData = new Object();
             postData.Nume_pacient = nume_pacient;
             postData.Diagnostic = diagnostic;
             postData.Medicament1 = medicament_1;
+            postData.Cant1 = cant_1;
             postData.Medicament2 = medicament_2;
+            postData.Cant2 = cant_2;
             postData.Medicament3 = medicament_3;
+            postData.Cant3 = cant_3;
             postData.Medicament4 = medicament_4;
+            postData.Cant4 = cant_4;
             postData.Medicament5 = medicament_5;
+            postData.Cant5 = cant_5;
 
             ajaxHelper.post("/Home/CautaMedicamente?",
                 postData,
