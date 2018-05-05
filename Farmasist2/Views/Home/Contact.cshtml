@@ -137,6 +137,16 @@
                                                     <input type="number" class="form-control" id="cant5" placeholder="buc.">
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="tipReteta" class="col-sm-4 col-form-label">Tip reteta</label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control" id="tipReteta">
+                                                        <option>C</option>
+                                                        <option>G</option>
+                                                        <option>N</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
@@ -156,7 +166,8 @@
                                                                         $('#medicament4').val(),
                                                                         $('#cant4').val(),
                                                                         $('#medicament5').val(),
-                                                                        $('#cant5').val())">Creare reteta</button>
+                                                                        $('#cant5').val(),
+                                                                        $('#tipReteta').find(':selected').text())">Creare reteta</button>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +186,7 @@
 @section Scripts {
     <script src="~/Scripts/ModulMedic_CautareMedicament.js"></script>
     <script>
-        function creazaReteta(nume_medic, nume_pacient, prenume_pacient, diagnostic, medicament_1, cant_1, medicament_2, cant_2, medicament_3, cant_3, medicament_4, cant_4, medicament_5, cant_5) {
+        function creazaReteta(nume_medic, nume_pacient, prenume_pacient, diagnostic, medicament_1, cant_1, medicament_2, cant_2, medicament_3, cant_3, medicament_4, cant_4, medicament_5, cant_5, tip_reteta) {
             var postData = new Object();
             postData.Nume_medic = nume_medic;
             postData.Nume_pacient = nume_pacient;
@@ -191,6 +202,7 @@
             postData.Cant4 = cant_4;
             postData.Medicament5 = medicament_5;
             postData.Cant5 = cant_5;
+            postData.TipReteta = tip_reteta;
 
             ajaxHelper.post("/Home/CautaMedicamente?",
                 postData,
@@ -198,8 +210,9 @@
                     $("#listFarmacii").css('display', 'block')
                     $('#myModal').hide();
                     $('.modal-backdrop').hide();
+                    $(".farmacie").remove();
                     data.forEach(function(entry) {
-                        $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
+                        $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action farmacie" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
                     });
                 },
                 function () { console.log("Ceva nu a mers") })

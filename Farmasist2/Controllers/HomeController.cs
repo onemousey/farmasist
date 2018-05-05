@@ -85,7 +85,7 @@ namespace Farmasist2.Controllers
                     DataSet prog_ds = new DataSet();
                     prog_adp.Fill(prog_ds);
 
-                    SqlCommand ret_cmd = new SqlCommand("INSERT INTO Retete(CNP, NrProgramare, Medicament1, Medicament2, Medicament3, Medicament4, Medicament5, TipReteta, Status) VALUES(@cnp, @nr_programare, @med1, @med2, @med3, @med4, @med5, 'WIP', 'P')", connection2);
+                    SqlCommand ret_cmd = new SqlCommand("INSERT INTO Retete(CNP, NrProgramare, Medicament1, Medicament2, Medicament3, Medicament4, Medicament5, TipReteta, Status) VALUES(@cnp, @nr_programare, @med1, @med2, @med3, @med4, @med5, @tip_reteta, 'P')", connection2);
                     ret_cmd.CommandType = CommandType.Text;
                     ret_cmd.Parameters.AddWithValue("cnp", ((string)pac_ds.Tables[0].Rows[0].ItemArray[0]));
                     ret_cmd.Parameters.AddWithValue("nr_programare", ((int)prog_ds.Tables[0].Rows[0].ItemArray[0]));
@@ -94,6 +94,7 @@ namespace Farmasist2.Controllers
                     ret_cmd.Parameters.AddWithValue("med3", reteta.Medicament3 == null ? "NULL" : reteta.Medicament3);
                     ret_cmd.Parameters.AddWithValue("med4", reteta.Medicament4 == null ? "NULL" : reteta.Medicament4);
                     ret_cmd.Parameters.AddWithValue("med5", reteta.Medicament5 == null ? "NULL" : reteta.Medicament5);
+                    ret_cmd.Parameters.AddWithValue("tip_reteta", reteta.TipReteta);
                     SqlDataAdapter ret_adp = new SqlDataAdapter(ret_cmd);
                     DataSet ret_ds = new DataSet();
                     ret_adp.Fill(ret_ds);
