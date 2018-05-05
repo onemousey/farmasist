@@ -2,7 +2,6 @@
     ViewBag.Title = "Contact";
 }
 <div class="row">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -62,22 +61,71 @@
     <div class="col-md-4">
         <!-- Added containing column definition -->
         <div class="panel panel-primary">
-            <div class="panel-heading"><h4>Farmacie</h4></div>
+            <div class="panel-heading"><h4>Retete</h4></div>
             <div class="panel-body">
                 <div class="text-center">
                     <div class="container">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default">Medicament</button>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Farma1</a></li>
-                                <li><a href="#">Farma2</a></li>
-                                <li><a href="#">Farma3</a></li>
-                                <li><a href="#">Farma4</a></li>
-                            </ul>
-
+                        <!-- Large modal -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Reteta noua</button>
+                        <div id="myModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Reteta</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="numePacient" class="col-sm-4 col-form-label">Nume pacient</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="numePacient" placeholder="Popescu Ion">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="diagnostic" class="col-sm-4 col-form-label">Diagnostic</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="diagnostic" placeholder="Diagnostic">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="medicament1" class="col-sm-4 col-form-label">Medicament 1</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="medicament1" placeholder="Medicament 1">
+                                                </div>
+                                                <label for="medicament2" class="col-sm-4 col-form-label">Medicament 2</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="medicament2" placeholder="Medicament 2">
+                                                </div>
+                                                <label for="medicament3" class="col-sm-4 col-form-label">Medicament 3</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="medicament3" placeholder="Medicament 3">
+                                                </div>
+                                                <label for="medicament4" class="col-sm-4 col-form-label">Medicament 4</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="medicament4" placeholder="Medicament 4">
+                                                </div>
+                                                <label for="medicament5" class="col-sm-4 col-form-label">Medicament 5</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="medicament5" placeholder="Medicament 5">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" 
+                                                class="btn btn-primary" 
+                                                onclick="creazaReteta($('#numePacient').val(),
+                                                                        $('#diagnostic').val(),
+                                                                        $('#medicament1').val(),
+                                                                        $('#medicament2').val(),
+                                                                        $('#medicament3').val(),
+                                                                        $('#medicament4').val(),
+                                                                        $('#medicament5').val())">Creare reteta</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,3 +133,23 @@
         </div>
     </div>
 </div>
+@section Scripts {
+    <script src="~/Scripts/ModulMedic_CautareMedicament.js"></script>
+    <script>
+        function creazaReteta(nume_pacient, diagnostic, medicament_1, medicament_2, medicament_3, medicament_4, medicament_5) {
+            var postData = new Object();
+            postData.Nume_pacient = nume_pacient;
+            postData.Diagnostic = diagnostic;
+            postData.Medicament1 = medicament_1;
+            postData.Medicament2 = medicament_2;
+            postData.Medicament3 = medicament_3;
+            postData.Medicament4 = medicament_4;
+            postData.Medicament5 = medicament_5;
+
+            ajaxHelper.post("/Home/CautaMedicamente?",
+                postData,
+                function (data) { console.log(data) },
+                function () { console.log("Ceva nu a mers") })
+        }
+    </script>
+}
