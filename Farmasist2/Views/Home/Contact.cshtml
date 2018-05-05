@@ -134,7 +134,7 @@
                                         </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
                                         <button type="button" 
                                                 class="btn btn-primary" 
                                                 onclick="creazaReteta($('#numeMedic').val(),
@@ -157,6 +157,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="list-group" id="listFarmacii" style="display: none">
+            <a href="#" class="list-group-item list-group-item-action active">
+                Lista farmacii
+            </a>
         </div>
     </div>
 </div>
@@ -181,7 +186,14 @@
 
             ajaxHelper.post("/Home/CautaMedicamente?",
                 postData,
-                function (data) { console.log(data) },
+                function (data) {
+                    $("#listFarmacii").css('display', 'block')
+                    $('#myModal').hide();
+                    $('.modal-backdrop').hide();
+                    data.forEach(function(entry) {
+                        $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
+                    });
+                },
                 function () { console.log("Ceva nu a mers") })
         }
     </script>
