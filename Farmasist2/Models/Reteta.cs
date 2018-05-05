@@ -9,6 +9,7 @@ namespace Farmasist2.Models
     {
         public string Nume_medic { get; set; }
         public string Nume_pacient { get; set; }
+        public string Prenume_pacient { get; set; }
         public string Diagnostic { get; set; }
         public string Medicament1 { get; set; }
         public int Cant1 { get; set; }

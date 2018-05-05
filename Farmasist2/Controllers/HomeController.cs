@@ -69,17 +69,65 @@ namespace Farmasist2.Controllers
                     double doc_lat = Double.Parse(doc_geo[0]);
                     double doc_lng = Double.Parse(doc_geo[1]);
 
+                    SqlCommand pac_cmd = new SqlCommand("SELECT TOP 1 * FROM Pacienti WHERE Nume = @nume AND Prenume = @prenume", connection2);
+                    pac_cmd.CommandType = CommandType.Text;
+                    pac_cmd.Parameters.AddWithValue("nume", reteta.Nume_pacient);
+                    pac_cmd.Parameters.AddWithValue("prenume", reteta.Prenume_pacient);
+                    SqlDataAdapter pac_adp = new SqlDataAdapter(pac_cmd);
+                    DataSet pac_ds = new DataSet();
+                    pac_adp.Fill(pac_ds);
+
+                    SqlCommand prog_cmd = new SqlCommand("SELECT TOP 1 * FROM Programari WHERE IDMedic = @id_medic AND CNP = @cnp ORDER BY DATA DESC", connection2);
+                    prog_cmd.CommandType = CommandType.Text;
+                    prog_cmd.Parameters.AddWithValue("id_medic", ((int)ds_doctor.Tables[0].Rows[0].ItemArray[0]));
+                    prog_cmd.Parameters.AddWithValue("cnp", ((string)pac_ds.Tables[0].Rows[0].ItemArray[0]));
+                    SqlDataAdapter prog_adp = new SqlDataAdapter(prog_cmd);
+                    DataSet prog_ds = new DataSet();
+                    prog_adp.Fill(prog_ds);
+
+                    SqlCommand ret_cmd = new SqlCommand("INSERT INTO Retete(CNP, NrProgramare, Medicament1, Medicament2, Medicament3, Medicament4, Medicament5, TipReteta, Status) VALUES(@cnp, @nr_programare, @med1, @med2, @med3, @med4, @med5, 'WIP', 'P')", connection2);
+                    ret_cmd.CommandType = CommandType.Text;
+                    ret_cmd.Parameters.AddWithValue("cnp", ((string)pac_ds.Tables[0].Rows[0].ItemArray[0]));
+                    ret_cmd.Parameters.AddWithValue("nr_programare", ((int)prog_ds.Tables[0].Rows[0].ItemArray[0]));
+                    ret_cmd.Parameters.AddWithValue("med1", reteta.Medicament1 == null ? "NULL" : reteta.Medicament1);
+                    ret_cmd.Parameters.AddWithValue("med2", reteta.Medicament2 == null ? "NULL" : reteta.Medicament2);
+                    ret_cmd.Parameters.AddWithValue("med3", reteta.Medicament3 == null ? "NULL" : reteta.Medicament3);
+                    ret_cmd.Parameters.AddWithValue("med4", reteta.Medicament4 == null ? "NULL" : reteta.Medicament4);
+                    ret_cmd.Parameters.AddWithValue("med5", reteta.Medicament5 == null ? "NULL" : reteta.Medicament5);
+                    SqlDataAdapter ret_adp = new SqlDataAdapter(ret_cmd);
+                    DataSet ret_ds = new DataSet();
+                    ret_adp.Fill(ret_ds);
+
+                    SqlCommand select_ret_cmd = new SqlCommand("SELECT TOP 1 * FROM Retete WHERE NrProgramare = @nr_programare ORDER BY IDTratament DESC", connection2);
+                    select_ret_cmd.CommandType = CommandType.Text;
+                    select_ret_cmd.Parameters.AddWithValue("nr_programare", ((int)prog_ds.Tables[0].Rows[0].ItemArray[0]));
+                    SqlDataAdapter select_ret_adp = new SqlDataAdapter(select_ret_cmd);
+                    DataSet select_ret_ds = new DataSet();
+                    select_ret_adp.Fill(select_ret_ds);
+
+                    SqlCommand cons_cmd = new SqlCommand("INSERT INTO Consultatii(NrProgramare, IDMedic, CNP, Diagnostic, IDTratament) VALUES(@nr_programare, @id_medic, @cnp, @diagnostic, @id_tratament)", connection2);
+                    cons_cmd.CommandType = CommandType.Text;
+                    cons_cmd.Parameters.AddWithValue("nr_programare", ((int)prog_ds.Tables[0].Rows[0].ItemArray[0]));
+                    cons_cmd.Parameters.AddWithValue("id_medic", ((int)ds_doctor.Tables[0].Rows[0].ItemArray[0]));
+                    cons_cmd.Parameters.AddWithValue("cnp", ((string)pac_ds.Tables[0].Rows[0].ItemArray[0]));
+                    cons_cmd.Parameters.AddWithValue("diagnostic", reteta.Diagnostic);
+                    cons_cmd.Parameters.AddWithValue("id_tratament", ((int)select_ret_ds.Tables[0].Rows[0].ItemArray[0]));
+                    SqlDataAdapter cons_adp = new SqlDataAdapter(cons_cmd);
+                    DataSet cons_ds = new DataSet();
+                    cons_adp.Fill(cons_ds);
+
+
                     SqlCommand cmd = new SqlCommand("SELECT T.IDFarmacie, T.Denumire, T.Locatie, L.IDMedicament, L.DenumireComerciala, S.Cantitate FROM StocMedicamenteFarmacie AS S " +
-                                                    "INNER JOIN ListaMedicamente AS L ON S.IDMedicament = L.IDMedicament " +
-                                                    "INNER JOIN( " +
-                                                            "SELECT S.IDFarmacie, F.Denumire, F.Locatie FROM StocMedicamenteFarmacie AS S" +
-                                                            " INNER JOIN ListaMedicamente AS L ON S.IDMedicament = L.IDMedicament" +
-                                                            " INNER JOIN ListaFarmacii AS F ON F.IDFarmacie = S.IDFarmacie" +
-                                                            " WHERE L.DenumireComerciala IN (@med1, @med2, @med3, @med4, @med5)" +
-                                                            " GROUP BY S.IDFarmacie, F.Denumire, F.Locatie" +
-                                                            " HAVING Count(L.IDMedicament) = @nr_med " +
-                                                    ") AS T ON S.IDFarmacie = T.IDFarmacie " +
-                                                    "WHERE L.DenumireComerciala IN(@med1, @med2, @med3, @med4, @med5)", connection2);
+                                                      "INNER JOIN ListaMedicamente AS L ON S.IDMedicament = L.IDMedicament " +
+                                                      "INNER JOIN( " +
+                                                              "SELECT S.IDFarmacie, F.Denumire, F.Locatie FROM StocMedicamenteFarmacie AS S" +
+                                                              " INNER JOIN ListaMedicamente AS L ON S.IDMedicament = L.IDMedicament" +
+                                                              " INNER JOIN ListaFarmacii AS F ON F.IDFarmacie = S.IDFarmacie" +
+                                                              " WHERE L.DenumireComerciala IN (@med1, @med2, @med3, @med4, @med5)" +
+                                                              " GROUP BY S.IDFarmacie, F.Denumire, F.Locatie" +
+                                                              " HAVING Count(L.IDMedicament) = @nr_med " +
+                                                      ") AS T ON S.IDFarmacie = T.IDFarmacie " +
+                                                      "WHERE L.DenumireComerciala IN(@med1, @med2, @med3, @med4, @med5)", connection2);
 
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("med1", reteta.Medicament1 == null ? "NULL" : reteta.Medicament1);
@@ -92,11 +140,11 @@ namespace Farmasist2.Controllers
                     DataSet ds = new DataSet();
                     adp.Fill(ds);
 
-                    for(int i = 0; i< ds.Tables[0].Rows.Count; i++)
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
                         var key = ((int)ds.Tables[0].Rows[i].ItemArray[0]);
                         var list = map.FirstOrDefault(x => x.Key == key).Value;
-                        if(list == null)
+                        if (list == null)
                         {
                             list = new List<object[]>();
                         }
@@ -133,7 +181,7 @@ namespace Farmasist2.Controllers
                     }
 
                     farmacii.Sort((x, y) => x.Distanta.CompareTo(y.Distanta));
-                        
+
                     return Json(farmacii);
                 }
             }
@@ -163,7 +211,8 @@ namespace Farmasist2.Controllers
             return degrees * (Math.PI / 180);
         }
 
-        public double RadiansToDegrees(double radians) {
+        public double RadiansToDegrees(double radians)
+        {
             return radians * (180 / Math.PI);
         }
     }

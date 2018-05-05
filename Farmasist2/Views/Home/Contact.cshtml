@@ -85,7 +85,13 @@
                                             <div class="form-group row">
                                                 <label for="numePacient" class="col-sm-4 col-form-label">Nume pacient</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-control" id="numePacient" placeholder="Popescu Ion">
+                                                    <input type="text" class="form-control" id="numePacient" placeholder="Popescu">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="prenumePacient" class="col-sm-4 col-form-label">Prenume pacient</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="prenumePacient" placeholder="Ion">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -139,6 +145,7 @@
                                                 class="btn btn-primary" 
                                                 onclick="creazaReteta($('#numeMedic').val(),
                                                                         $('#numePacient').val(),
+                                                                        $('#prenumePacient').val(),
                                                                         $('#diagnostic').val(),
                                                                         $('#medicament1').val(),
                                                                         $('#cant1').val(),
@@ -168,10 +175,11 @@
 @section Scripts {
     <script src="~/Scripts/ModulMedic_CautareMedicament.js"></script>
     <script>
-        function creazaReteta(nume_medic, nume_pacient, diagnostic, medicament_1, cant_1, medicament_2, cant_2, medicament_3, cant_3, medicament_4, cant_4, medicament_5, cant_5) {
+        function creazaReteta(nume_medic, nume_pacient, prenume_pacient, diagnostic, medicament_1, cant_1, medicament_2, cant_2, medicament_3, cant_3, medicament_4, cant_4, medicament_5, cant_5) {
             var postData = new Object();
             postData.Nume_medic = nume_medic;
             postData.Nume_pacient = nume_pacient;
+            postData.Prenume_pacient = prenume_pacient;
             postData.Diagnostic = diagnostic;
             postData.Medicament1 = medicament_1;
             postData.Cant1 = cant_1;
