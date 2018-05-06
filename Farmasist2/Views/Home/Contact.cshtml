@@ -61,12 +61,13 @@
     <div class="col-md-4">
         <!-- Added containing column definition -->
         <div class="panel panel-primary">
-            <div class="panel-heading"><h4>Retete</h4></div>
+            <div class="panel-heading"><h4>Consultatie</h4></div>
             <div class="panel-body">
                 <div class="text-center">
                     <div class="container">
                         <!-- Large modal -->
                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Reteta noua</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#consultationModal">Consultatie</button>
                         <div id="myModal" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -151,8 +152,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
-                                        <button type="button" 
-                                                class="btn btn-primary" 
+                                        <button type="button"
+                                                class="btn btn-primary"
                                                 onclick="creazaReteta($('#numeMedic').val(),
                                                                         $('#numePacient').val(),
                                                                         $('#prenumePacient').val(),
@@ -167,7 +168,58 @@
                                                                         $('#cant4').val(),
                                                                         $('#medicament5').val(),
                                                                         $('#cant5').val(),
-                                                                        $('#tipReteta').find(':selected').text())">Creare reteta</button>
+                                                                        $('#tipReteta').find(':selected').text())">
+                                            Creare reteta
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="consultationModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Reteta</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="numePacient" class="col-sm-4 col-form-label">Nume medic</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="nume_medic" placeholder="Pop Mircea">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="numePacient" class="col-sm-4 col-form-label">Nume pacient</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="nume_pacient" placeholder="Popescu">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="prenumePacient" class="col-sm-4 col-form-label">Prenume pacient</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="prenume_pacient" placeholder="Ion">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="diagnostic" class="col-sm-4 col-form-label">Diagnostic</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="diagnostic_" placeholder="Diagnostic">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
+                                        <button type="button"
+                                                class="btn btn-primary"
+                                                onclick="salvareConsultatie($('#nume_medic').val(),
+                                                                        $('#nume_pacient').val(),
+                                                                        $('#prenume_pacient').val(),
+                                                                        $('#diagnostic_').val())">
+                                            Salvare consultatie
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -204,14 +256,34 @@
             postData.Cant5 = cant_5;
             postData.TipReteta = tip_reteta;
 
-            ajaxHelper.post("/Home/CautaMedicamente?",
+            ajaxHelper.post("/Home/CautaMedicamente",
                 postData,
                 function (data) {
                     $("#listFarmacii").css('display', 'block')
                     $('#myModal').hide();
                     $('.modal-backdrop').hide();
                     $(".farmacie").remove();
-                    data.forEach(function(entry) {
+                    data.forEach(function (entry) {
+                        $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action farmacie" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
+                    });
+                },
+                function () { console.log("Ceva nu a mers") })
+        }
+        function salvareConsultatie(nume_medic, nume_pacient, prenume_pacient, diagnostic) {
+            var postData = new Object();
+            postData.Nume_medic = nume_medic;
+            postData.Nume_pacient = nume_pacient;
+            postData.Prenume_pacient = prenume_pacient;
+            postData.Diagnostic = diagnostic;
+
+            ajaxHelper.post("/Home/SalvareConsultatie",
+                postData,
+                function (data) {
+                    $("#listFarmacii").css('display', 'block')
+                    $('#myModal').hide();
+                    $('.modal-backdrop').hide();
+                    $(".farmacie").remove();
+                    data.forEach(function (entry) {
                         $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action farmacie" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
                     });
                 },

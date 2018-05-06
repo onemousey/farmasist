@@ -194,7 +194,54 @@ namespace Farmasist2.Controllers
             }
             return Content("Bravoooo!!!");
         }
+        public ActionResult SalvareConsultatie(Reteta reteta)
+        {
+            try
+            {
+                using (SqlConnection connection2 = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=aspnet-Farmasist2-20180324102509;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+                {
+                    SqlCommand cmd_doctor = new SqlCommand("SELECT * FROM Medici WHERE Nume = @nume_medic", connection2);
+                    cmd_doctor.CommandType = CommandType.Text;
+                    cmd_doctor.Parameters.AddWithValue("nume_medic", reteta.Nume_medic);
+                    SqlDataAdapter adp_doctor = new SqlDataAdapter(cmd_doctor);
+                    DataSet ds_doctor = new DataSet();
+                    adp_doctor.Fill(ds_doctor);
 
+                    SqlCommand pac_cmd = new SqlCommand("SELECT TOP 1 * FROM Pacienti WHERE Nume = @nume AND Prenume = @prenume", connection2);
+                    pac_cmd.CommandType = CommandType.Text;
+                    pac_cmd.Parameters.AddWithValue("nume", reteta.Nume_pacient);
+                    pac_cmd.Parameters.AddWithValue("prenume", reteta.Prenume_pacient);
+                    SqlDataAdapter pac_adp = new SqlDataAdapter(pac_cmd);
+                    DataSet pac_ds = new DataSet();
+                    pac_adp.Fill(pac_ds);
+
+                    SqlCommand prog_cmd = new SqlCommand("SELECT TOP 1 * FROM Programari WHERE IDMedic = @id_medic AND CNP = @cnp ORDER BY DATA DESC", connection2);
+                    prog_cmd.CommandType = CommandType.Text;
+                    prog_cmd.Parameters.AddWithValue("id_medic", ((int)ds_doctor.Tables[0].Rows[0].ItemArray[0]));
+                    prog_cmd.Parameters.AddWithValue("cnp", ((string)pac_ds.Tables[0].Rows[0].ItemArray[0]));
+                    SqlDataAdapter prog_adp = new SqlDataAdapter(prog_cmd);
+                    DataSet prog_ds = new DataSet();
+                    prog_adp.Fill(prog_ds);
+
+                    SqlCommand cons_cmd = new SqlCommand("INSERT INTO Consultatii(NrProgramare, IDMedic, CNP, Diagnostic) VALUES(@nr_programare, @id_medic, @cnp, @diagnostic)", connection2);
+                    cons_cmd.CommandType = CommandType.Text;
+                    cons_cmd.Parameters.AddWithValue("nr_programare", ((int)prog_ds.Tables[0].Rows[0].ItemArray[0]));
+                    cons_cmd.Parameters.AddWithValue("id_medic", ((int)ds_doctor.Tables[0].Rows[0].ItemArray[0]));
+                    cons_cmd.Parameters.AddWithValue("cnp", ((string)pac_ds.Tables[0].Rows[0].ItemArray[0]));
+                    cons_cmd.Parameters.AddWithValue("diagnostic", reteta.Diagnostic);
+                    SqlDataAdapter cons_adp = new SqlDataAdapter(cons_cmd);
+                    DataSet cons_ds = new DataSet();
+                    cons_adp.Fill(cons_ds);
+                }
+            }
+            catch (SqlException err)
+            {
+                // Replace the error with something less specific.
+                // You could also log the error now.
+                throw new ApplicationException("Data error. " + err.Message.ToString());
+            }
+            return Content("Bravoooo!!!");
+        }
         public double calcDistance(double latA, double longA, double latB, double longB)
         {
 

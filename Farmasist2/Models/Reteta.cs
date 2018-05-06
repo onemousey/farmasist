@@ -22,5 +22,6 @@ namespace Farmasist2.Models
         public string Medicament5 { get; set; }
         public int Cant5 { get; set; }
         public string TipReteta { get; set; }
+        public string Observatie { get; set; }
     }
 }
