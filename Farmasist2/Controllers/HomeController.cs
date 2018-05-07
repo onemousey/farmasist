@@ -1,8 +1,11 @@
 ﻿using Farmasist2.Models;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -262,6 +265,26 @@ namespace Farmasist2.Controllers
         public double RadiansToDegrees(double radians)
         {
             return radians * (180 / Math.PI);
+        }
+
+        public FileContentResult GenereazaReteta(string numeMedic, string numePacient, string prenumePacient, string diagnostic, string medicament1, string cant1, string medicament2, string cant2, string medicament3, string cant3, string medicament4, string cant4, string medicament5, string cant5, string tipReteta)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+
+            Document doc = new Document();
+
+            PdfWriter writer = PdfWriter.GetInstance(doc, memoryStream);
+
+            doc.Open();
+            doc.Add(new Paragraph("Medic: "+ numeMedic ));
+            doc.Add(new Paragraph("Nume pacient: " + numePacient));
+            doc.Add(new Paragraph("Prenume pacient: " + prenumePacient));
+            doc.Add(new Paragraph("Diagnostic: " + diagnostic));
+            doc.Close();
+
+            writer.Flush();
+
+            return File(memoryStream.GetBuffer(), "application/pdf", "diploma.pdf");
         }
     }
 }

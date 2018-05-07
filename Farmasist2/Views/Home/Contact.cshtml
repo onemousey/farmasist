@@ -150,7 +150,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer" id="actiuni">
                                         <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
                                         <button type="button"
                                                 class="btn btn-primary"
@@ -171,6 +171,10 @@
                                                                         $('#tipReteta').find(':selected').text())">
                                             Creare reteta
                                         </button>
+
+                                        <a onclick="generareRaportReteta()" href="#" class="btn btn-primary">
+                                            Printare reteta
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -288,6 +292,12 @@
                     });
                 },
                 function () { console.log("Ceva nu a mers") })
+        }
+        function generareRaportReteta(){
+           
+            $("#actiuni").append("<a href=/Home/GenereazaReteta?numeMedic="+$('#numeMedic').val()+"&numePacient="+$('#numePacient').val()+"&prenumePacient="+$('#prenumePacient').val()+"&diagnostic="+$('#diagnostic').val()+"&medicament1="+$('#medicament1').val()+"&cant1="+$('#cant1').val()+"&medicament2="+$('#medicament2').val()+"&cant2="+$('#cant2').val()+"&medicament3="+$('#medicament3').val()+"&cant3="+$('#cant3').val()+"&medicament4="+$('#medicament4').val()+"&cant4="+$('#cant4').val()+"&medicament5"+$('#medicament5').val()+"&cant5="+$('#cant5').val()+"&tipReteta="+$('#tipReteta').val()+" style='display:none' id='buton-generat'></a>")
+            window.location = $("#buton-generat").attr("href")
+            $("#buton-generat").remove()
         }
     </script>
 }

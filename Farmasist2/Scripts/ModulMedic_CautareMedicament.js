@@ -24,8 +24,19 @@
             failure: failureCallBack
         });
     }
+    function postPdf(url, postData, successCallback, failureCallBack) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify(postData),
+            contentType: "application/pdf",
+            success: successCallback,
+            failure: failureCallBack
+        });
+    }
     return {
         get: get,
-        post: post
+        post: post,
+        postPdf: postPdf
     }
 }();

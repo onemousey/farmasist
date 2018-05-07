@@ -244,3 +244,5 @@ G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Mic
 G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\obj\Debug\Farmasist2.csprojResolveAssemblyReference.cache
 G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\obj\Debug\Farmasist2.dll
 G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\obj\Debug\Farmasist2.pdb
+G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\bin\itextsharp.dll
+G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\bin\itextsharp.xml
