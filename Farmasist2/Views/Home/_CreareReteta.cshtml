@@ -1,0 +1,183 @@
+﻿@model Farmasist2.Models.Farmacie
+
+@*Panel 3*@
+<div class="col-md-4">
+    <!-- Added containing column definition -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h4>Consultatie</h4></div>
+        <div class="panel-body">
+            <div class="text-center">
+                <div class="container">
+                    <!-- Large modal -->
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Reteta noua</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#consultationModal">Consultatie</button>
+                    <div id="myModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Reteta</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Nume medic</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="numeMedic" placeholder="Georgescu">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Nume pacient</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="numePacient" placeholder="Popescu">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="prenumePacient" class="col-sm-4 col-form-label">Prenume pacient</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="prenumePacient" placeholder="Ion">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="diagnostic" class="col-sm-4 col-form-label">Diagnostic</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="diagnostic" placeholder="Diagnostic">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="medicament1" class="col-sm-4 col-form-label">Medicament 1</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="medicament1" placeholder="Medicament 1">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="number" class="form-control" id="cant1" placeholder="buc.">
+                                            </div>
+                                            <label for="medicament2" class="col-sm-4 col-form-label">Medicament 2</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="medicament2" placeholder="Medicament 2">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="number" class="form-control" id="cant2" placeholder="buc.">
+                                            </div>
+                                            <label for="medicament3" class="col-sm-4 col-form-label">Medicament 3</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="medicament3" placeholder="Medicament 3">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="number" class="form-control" id="cant3" placeholder="buc.">
+                                            </div>
+                                            <label for="medicament4" class="col-sm-4 col-form-label">Medicament 4</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="medicament4" placeholder="Medicament 4">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="number" class="form-control" id="cant4" placeholder="buc.">
+                                            </div>
+                                            <label for="medicament5" class="col-sm-4 col-form-label">Medicament 5</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="medicament5" placeholder="Medicament 5">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="number" class="form-control" id="cant5" placeholder="buc.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tipReteta" class="col-sm-4 col-form-label">Tip reteta</label>
+                                            <div class="col-sm-6">
+                                                <select class="form-control" id="tipReteta">
+                                                    <option>C</option>
+                                                    <option>G</option>
+                                                    <option>N</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer" id="actiuni">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
+                                    <button type="button"
+                                            class="btn btn-primary"
+                                            onclick="creazaReteta($('#numeMedic').val(),
+                                                                        $('#numePacient').val(),
+                                                                        $('#prenumePacient').val(),
+                                                                        $('#diagnostic').val(),
+                                                                        $('#medicament1').val(),
+                                                                        $('#cant1').val(),
+                                                                        $('#medicament2').val(),
+                                                                        $('#cant2').val(),
+                                                                        $('#medicament3').val(),
+                                                                        $('#cant3').val(),
+                                                                        $('#medicament4').val(),
+                                                                        $('#cant4').val(),
+                                                                        $('#medicament5').val(),
+                                                                        $('#cant5').val(),
+                                                                        $('#tipReteta').find(':selected').text())">
+                                        Creare reteta
+                                    </button>
+
+                                    <a onclick="generareRaportReteta()" href="#" class="btn btn-primary">
+                                        Printare reteta
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="consultationModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Reteta</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Nume medic</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="nume_medic" placeholder="Pop Mircea">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Nume pacient</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="nume_pacient" placeholder="Popescu">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="prenumePacient" class="col-sm-4 col-form-label">Prenume pacient</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="prenume_pacient" placeholder="Ion">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="diagnostic" class="col-sm-4 col-form-label">Diagnostic</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="diagnostic_" placeholder="Diagnostic">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
+                                    <button type="button"
+                                            class="btn btn-primary"
+                                            onclick="salvareConsultatie($('#nume_medic').val(),
+                                                                        $('#nume_pacient').val(),
+                                                                        $('#prenume_pacient').val(),
+                                                                        $('#diagnostic_').val())">
+                                        Salvare consultatie
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-group" id="listFarmacii" style="display: none">
+        <a href="#" class="list-group-item list-group-item-action active">
+            Lista farmacii
+        </a>
+    </div>
+</div>

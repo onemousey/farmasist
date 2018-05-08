@@ -2,6 +2,7 @@
 using Farmasist2.ModulMedic;
 using System.Net;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace Farmasist2.Controllers
 {
@@ -42,7 +43,7 @@ namespace Farmasist2.Controllers
             bool rezultat = CreareReteta.SalvareConsultatie(reteta);
             if(rezultat)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.OK);
+                return Json("status: OK");
             }
             else
             {
