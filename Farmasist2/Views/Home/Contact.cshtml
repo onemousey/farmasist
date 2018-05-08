@@ -283,8 +283,10 @@
             ajaxHelper.post("/Home/SalvareConsultatie",
                 postData,
                 function (data) {
+                    $("#listFarmacii").css('display', 'block')
                     $('#myModal').hide();
                     $('.modal-backdrop').hide();
+                    $(".farmacie").remove();
                     data.forEach(function (entry) {
                         $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action farmacie" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
                     });
@@ -292,7 +294,8 @@
                 function () { console.log("Ceva nu a mers") })
         }
         function generareRaportReteta(){
-           
+            $('#myModal').hide();
+            $('.modal-backdrop').hide();
             $("#actiuni").append("<a href=/Home/GenereazaReteta?numeMedic="+$('#numeMedic').val()+"&numePacient="+$('#numePacient').val()+"&prenumePacient="+$('#prenumePacient').val()+"&diagnostic="+$('#diagnostic').val()+"&medicament1="+$('#medicament1').val()+"&cant1="+$('#cant1').val()+"&medicament2="+$('#medicament2').val()+"&cant2="+$('#cant2').val()+"&medicament3="+$('#medicament3').val()+"&cant3="+$('#cant3').val()+"&medicament4="+$('#medicament4').val()+"&cant4="+$('#cant4').val()+"&medicament5"+$('#medicament5').val()+"&cant5="+$('#cant5').val()+"&tipReteta="+$('#tipReteta').val()+" style='display:none' id='buton-generat'></a>")
             window.location = $("#buton-generat").attr("href")
             $("#buton-generat").remove()

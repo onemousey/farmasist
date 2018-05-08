@@ -195,7 +195,6 @@ namespace Farmasist2.Controllers
                 // You could also log the error now.
                 throw new ApplicationException("Data error. " + err.Message.ToString());
             }
-            return Content("Bravoooo!!!");
         }
         public ActionResult SalvareConsultatie(Reteta reteta)
         {
@@ -294,7 +293,7 @@ namespace Farmasist2.Controllers
             doc.Open();
             doc.Add(titlu);
             doc.Add(new Paragraph(" "));
-            doc.Add(new Paragraph("Medic: " + numeMedic));
+            doc.Add(new Paragraph("Nume medic: " + numeMedic));
             doc.Add(new Paragraph(" "));
             doc.Add(new Paragraph("Nume pacient: " + numePacient));
             doc.Add(new Paragraph("Prenume pacient: " + prenumePacient));
@@ -303,7 +302,7 @@ namespace Farmasist2.Controllers
             doc.Add(new Paragraph(" "));
             doc.Add(new Paragraph("Medicament: " + String.Join(", ", m)));
             doc.Add(new Paragraph(" "));
-            doc.Add(new Paragraph("Tip: " + tipReteta));
+            doc.Add(new Paragraph("Tip: " + (tipReteta.Equals("C") ? "Compensata" : tipReteta.Equals("G") ? "Gratuita" : "Normala")));
             doc.Close();
 
             writer.Flush();
