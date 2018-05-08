@@ -80,7 +80,7 @@
                                             <div class="form-group row">
                                                 <label for="numePacient" class="col-sm-4 col-form-label">Nume medic</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-control" id="numeMedic" placeholder="Pop Mircea">
+                                                    <input type="text" class="form-control" id="numeMedic" placeholder="Georgescu">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -283,10 +283,8 @@
             ajaxHelper.post("/Home/SalvareConsultatie",
                 postData,
                 function (data) {
-                    $("#listFarmacii").css('display', 'block')
                     $('#myModal').hide();
                     $('.modal-backdrop').hide();
-                    $(".farmacie").remove();
                     data.forEach(function (entry) {
                         $("#listFarmacii").append('<a href="#" class="list-group-item list-group-item-action farmacie" style="text-align: left">' + entry.Nume_farmacie + '<span class="badge badge-primary badge-pill">' + entry.Distanta + 'km</span></a>')
                     });

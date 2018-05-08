@@ -271,15 +271,39 @@ namespace Farmasist2.Controllers
         {
             MemoryStream memoryStream = new MemoryStream();
 
-            Document doc = new Document();
+            Document doc = new Document(new Rectangle(500, 400));
 
             PdfWriter writer = PdfWriter.GetInstance(doc, memoryStream);
 
+            string med1 = (!string.IsNullOrEmpty(medicament1) && !string.IsNullOrEmpty(cant1)) ? $"{medicament1}({cant1}buc.)" : null;
+            string med2 = (!string.IsNullOrEmpty(medicament2) && !string.IsNullOrEmpty(cant2)) ? $"{medicament2}({cant2}buc.)" : null;
+            string med3 = (!string.IsNullOrEmpty(medicament3) && !string.IsNullOrEmpty(cant3)) ? $"{medicament3}({cant3}buc.)" : null;
+            string med4 = (!string.IsNullOrEmpty(medicament4) && !string.IsNullOrEmpty(cant4)) ? $"{medicament4}({cant4}buc.)" : null;
+            string med5 = (!string.IsNullOrEmpty(medicament5) && !string.IsNullOrEmpty(cant5)) ? $"{medicament5}({cant5}buc.)" : null;
+
+            List<string> m = new List<string>();
+            if (med1 != null) m.Add(med1);
+            if (med2 != null) m.Add(med2);
+            if (med3 != null) m.Add(med3);
+            if (med4 != null) m.Add(med4);
+            if (med5 != null) m.Add(med5);
+
+            Paragraph titlu = new Paragraph("Reteta");
+            titlu.Alignment = Element.ALIGN_CENTER;
+
             doc.Open();
-            doc.Add(new Paragraph("Medic: "+ numeMedic ));
+            doc.Add(titlu);
+            doc.Add(new Paragraph(" "));
+            doc.Add(new Paragraph("Medic: " + numeMedic));
+            doc.Add(new Paragraph(" "));
             doc.Add(new Paragraph("Nume pacient: " + numePacient));
             doc.Add(new Paragraph("Prenume pacient: " + prenumePacient));
+            doc.Add(new Paragraph(" "));
             doc.Add(new Paragraph("Diagnostic: " + diagnostic));
+            doc.Add(new Paragraph(" "));
+            doc.Add(new Paragraph("Medicament: " + String.Join(", ", m)));
+            doc.Add(new Paragraph(" "));
+            doc.Add(new Paragraph("Tip: " + tipReteta));
             doc.Close();
 
             writer.Flush();
