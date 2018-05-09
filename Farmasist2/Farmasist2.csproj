@@ -209,6 +209,7 @@
     <Compile Include="Models\Farmacie.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pacient.cs" />
     <Compile Include="Models\Reteta.cs" />
     <Compile Include="ModulMedic\CreareReteta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
