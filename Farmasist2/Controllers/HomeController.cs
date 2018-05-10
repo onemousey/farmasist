@@ -13,14 +13,14 @@ namespace Farmasist2.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Pacient()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Medic()
         {
             ViewBag.Message = "Your contact page.";
 
