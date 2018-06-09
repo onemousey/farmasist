@@ -16,14 +16,14 @@ namespace Farmasist2.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Pacient()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Medic()
         {
             ViewBag.Message = "Your contact page.";
 
@@ -58,7 +58,6 @@ namespace Farmasist2.Controllers
             return File(CreareReteta.GenereazaReteta(numeMedic, numePacient, prenumePacient, diagnostic, medicament1, cant1, medicament2, cant2, medicament3, cant3, medicament4, cant4, medicament5, cant5, tipReteta), "application/pdf", "diploma.pdf");
         }
 
-
         [HttpPost]
         public ActionResult CautarePacient(string cnp)
         {
@@ -73,7 +72,7 @@ namespace Farmasist2.Controllers
                     DataSet ds_pacient = new DataSet();
                     adp_pacient.Fill(ds_pacient);
 
-                    return Json("" + ds_pacient.Tables[0].Rows[0].ItemArray[1] + " " + ds_pacient.Tables[0].Rows[0].ItemArray[2]);
+                    return Json(" Nume: " + ds_pacient.Tables[0].Rows[0].ItemArray[1] + " " + ds_pacient.Tables[0].Rows[0].ItemArray[2] + "\n" + " Adresa:" + ds_pacient.Tables[0].Rows[0].ItemArray[3] + " \n" + " Grupa Sanguina:" + ds_pacient.Tables[0].Rows[0].ItemArray[4] + " \n" + " Alergii:" + ds_pacient.Tables[0].Rows[0].ItemArray[5]);
                 }
             }
             catch (SqlException err)
@@ -94,16 +93,16 @@ namespace Farmasist2.Controllers
                     SqlCommand cmd_pacient = new SqlCommand("Insert into Pacienti values(@cnp,@nume,@prenume,@adresa,@grupaSanguina,@alergii)", connection2);
                     cmd_pacient.CommandType = CommandType.Text;
                     cmd_pacient.Parameters.AddWithValue("cnp", pacient.CNP);
-                    cmd_pacient.Parameters.AddWithValue("nume", "1");
-                    cmd_pacient.Parameters.AddWithValue("prenume", "1");
-                    cmd_pacient.Parameters.AddWithValue("adresa", "1");
-                    cmd_pacient.Parameters.AddWithValue("grupaSanguina", "1");
-                    cmd_pacient.Parameters.AddWithValue("alergii", "1");
+                    cmd_pacient.Parameters.AddWithValue("nume", pacient.Nume);
+                    cmd_pacient.Parameters.AddWithValue("prenume", pacient.Prenume);
+                    cmd_pacient.Parameters.AddWithValue("adresa", pacient.Adresa);
+                    cmd_pacient.Parameters.AddWithValue("grupaSanguina", pacient.Grupa_Sanguina);
+                    cmd_pacient.Parameters.AddWithValue("alergii", pacient.Alergii);
                     SqlDataAdapter adp_pacient = new SqlDataAdapter(cmd_pacient);
                     DataSet ds_pacient = new DataSet();
                     adp_pacient.Fill(ds_pacient);
 
-                    return Json("ok");
+                    return Json(" ");
                 }
             }
             catch (SqlException err)
@@ -113,9 +112,5 @@ namespace Farmasist2.Controllers
                 throw new ApplicationException("Data error. " + err.Message.ToString());
             }
         }
-
-
     }
-
-
 }
