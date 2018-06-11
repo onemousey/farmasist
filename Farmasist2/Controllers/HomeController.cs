@@ -72,7 +72,14 @@ namespace Farmasist2.Controllers
                     DataSet ds_pacient = new DataSet();
                     adp_pacient.Fill(ds_pacient);
 
-                    return Json(" Nume: " + ds_pacient.Tables[0].Rows[0].ItemArray[1] + " " + ds_pacient.Tables[0].Rows[0].ItemArray[2] + "\n" + " Adresa:" + ds_pacient.Tables[0].Rows[0].ItemArray[3] + " \n" + " Grupa Sanguina:" + ds_pacient.Tables[0].Rows[0].ItemArray[4] + " \n" + " Alergii:" + ds_pacient.Tables[0].Rows[0].ItemArray[5]);
+                    if(ds_pacient.Tables[0].Rows.Count == 0)
+                    {
+                        return Json("Pacientul cautat nu exista in baza de date!");
+                    }
+                    else
+                    {
+                        return Json(" Nume: " + ds_pacient.Tables[0].Rows[0].ItemArray[1] + " " + ds_pacient.Tables[0].Rows[0].ItemArray[2] + "\n" + " Adresa:" + ds_pacient.Tables[0].Rows[0].ItemArray[3] + " \n" + " Grupa Sanguina:" + ds_pacient.Tables[0].Rows[0].ItemArray[4] + " \n" + " Alergii:" + ds_pacient.Tables[0].Rows[0].ItemArray[5]);
+                    }
                 }
             }
             catch (SqlException err)
