@@ -1,58 +1,186 @@
 ﻿@{
     ViewBag.Title = "Farmacist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="row">
+<div class="row" ng-app="farmasist" ng-controller="ModulFarmacistController as viewModel" ng-cloak>
+    <script src="~/Scripts/Farmacist/ModulFarmacistService.js"></script>
+    <script src="~/Scripts/Farmacist/ModulFarmacistController.js"></script>
+    <script src="~/Scripts/ModulMedic_CautareMedicament.js"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" media="screen">
-
     <link rel="stylesheet" type="text/css" href="~/Content/style.css"
-       
-        <br /> <br />
-  <br/>
+    <br /> <br />
     <br />
-   
+    <br />
+
     <div class="col-md-4">
         <!-- Rezerari -->
+        @*<div class="rezervare-box">
+                <h1>Rezervări  </h1>
+                <form>
+
+                    <input type="text" name="name" placeholder="Paracetamol " /><a href="#demo" data-toggle="collapse" style="color:red;">Răspuns</a>
+                    <div id="demo" class="collapse">
+                        <i class="fa fa-check" style="color:darkblue; font-size:xx-large;"></i>
+                        <i class="fa fa-close" style="color:darkblue; font-size:xx-large;  width:30%; "></i>
+                    </div>
+                    <input type="text" name="name" placeholder="Aspirina"><a href="#demo" data-toggle="collapse" style="color:red" ;>Răspuns</a>
+                    <input type="text" name="name" placeholder="Nurofen"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                    <input type="text" name="name" placeholder="Algocalmin">     <a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
+                </form>
+            </div>*@
+
+        <!-- Rezerari -->
         <div class="rezervare-box">
+
+
             <h1>Rezervări  </h1>
             <form>
-              
-                <input type="text" name="name" placeholder="Paracetamol "/><a href="#demo" data-toggle="collapse" style="color:red;">Răspuns</a>
-                <div id="demo" class="collapse">
-                    <i class="fa fa-check" style="color:darkblue; font-size:xx-large;"></i>
-                    <i class="fa fa-close" style="color:darkblue; font-size:xx-large;  width:30%; "></i>
-                                 </div>
-                <input type="text" name="name" placeholder="Aspirina"><a href="#demo" data-toggle="collapse" style="color:red";>Răspuns</a>
-                <input type="text" name="name" placeholder="Nurofen"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
-                <input type="text" name="name" placeholder="Algocalmin">     <a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
-                </form>
+
+                <script type="text/javascript">
+
+
+  $(document).ready(function(){
+
+
+    $("#acceptaMedicamente").click(function () {
+
+	$('input:checkbox[name=checkme]').attr('checked',true);
+
+    });
+
+    $("#RespingeMedicamente").click(function () {
+
+	$('input:checkbox[name=checkme]').attr('checked',false);
+
+    });
+
+  });
+
+                </script>
+
+                <body>
+
+                    <label class="checkbox-inline"><input type="checkbox" name="checkme">Nurofen</input></label>
+                    <label class="checkbox-inline"><input type="checkbox" name="checkme">Colebil</input></label>
+                    <label class="checkbox-inline"><input type="checkbox" name="checkme">Triferment</input></label>
+                    <label class="checkbox-inline"><input type="checkbox" name="checkme">Algocalmin</input></label>
+
+
+
+                    <br />
+                    <br />
+                    <br />
+
+
+                    <input type='button' value='Acceptă Medicamente' id='acceptaMedicamente'>
+                    <input type='button' value='Respinge Medicamente' id='RespingeMedicamente'>
+
         </div>
+
+
+
         <!----------->
         <!-----Rezervari aprobate-->
-        <div class="Raccepate-box">
+        <div class="Raccepate-box" id="mainDiv">
             <h2>Rezervări aprobate</h2>
-            <form>
-             <input type="text" name="name" placeholder="Paracetamol 5 buc. " /><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
-                <input type="text" name="name" placeholder="Aspirina 3 buc"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
-                <input type="text" name="name" placeholder="Nurofen 8 buc"><a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
-                <input type="text" name="name" placeholder="Algocalmin 2 buc">     <a href="#demo" data-toggle="collapse" style="color:red">Răspuns</a>
-            </form>
+            <table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th><center><font color="black">Medicament</font></center></th>
+                        <th><center><font color="black">Concentraţie</font></center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="med in viewModel.cereriMedicamenteAcceptate">
+                        <td><center><font color="black">{{med.DenumireComerciala}}</font></center></td>
+                        <td><center><font color="black">{{med.Concentratie}}</font></center></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <!---------------->
         <!------Cautare medicament-->
         <div class="Cautare-box">
             <h2>Căutare medicament</h2>
-            <form>
-                <input type="text" name="name" placeholder="Introduceți numele" /><i class="fa fa-search" style=" color:darkblue"></i>
-                <input type="text" name="name" placeholder="Paracetamol 9 buc" />
-                <input type="text" name="name" placeholder="Aspirina 3 buc">
-                <input type="text" name="name" placeholder="Nurofen 7 buc">
-                <input type="text" name="name" placeholder="Algocalmin 8 buc">   
-            </form>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" style="width:1100px" id="Tip" name="Tip" placeholder="Introduceți numele">
+            </div>
+
+            @*<div class="col-sm-offset-2 col-sm-12">*@
+            <button class="btn btn-primary" style="height:55px" onclick="CMedicament($('#Tip').val())"><i class="fa fa-search"></i></button>
+            @*</div>*@
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <table class="table" style="color:black;position:center; width:10px;">
+                <tr>
+                    <th>
+                        Cantitate
+                    </th>
+                    <th> </th>
+                    <th> </th>
+                    <th>
+                        Medicament
+                    </th>
+                    <th> </th>
+                    <th>
+                        Preţ
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" style="width:2100px" id="nume" name="nume">
+            </div>
+
+
+            <!--------------->
+
         </div>
-       <!--------------->
     </div>
+    <script>
+
+    jQuery(document).ready(function ($) {
+
+        var scope = angular.element($('#mainDiv')).scope();
+
+        //when the DOM is loaded, call the ajax to obtain the data and load the grid
+        scope.$apply(function () {
+            scope.viewModel.loadData();
+        });
+
+
+    });
+    </script>
+    <script>
+    function CMedicament(Tip) {
+        var postData = new Object();
+        postData.Tip = Tip;
+
+        ajaxHelper.post("/Home/CMedicament",
+            postData,
+            function (data) {
+                $("#nume").val(data)
+            },
+            function () { console.log("Ceva nu a mers!") })
+    }
+
+    </script>
+
+
+
+
+
 
 

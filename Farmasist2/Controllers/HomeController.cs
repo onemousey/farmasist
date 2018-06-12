@@ -125,5 +125,37 @@ namespace Farmasist2.Controllers
             var result = Json(Programarecs.getProgramare());
             return result;
         }
+
+        [HttpPost]
+        public ActionResult CMedicament(string Tip)
+        {
+            try
+            {
+                using (SqlConnection connection2 = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=aspnet-Farmasist2-20180324102509;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;"))
+                {
+                    SqlCommand cmd_medicament = new SqlCommand("SELECT * FROM StocMedicamenteFarmacie WHERE Tip=@tip", connection2);
+                    cmd_medicament.CommandType = CommandType.Text;
+                    cmd_medicament.Parameters.AddWithValue("Tip", Tip);
+                    SqlDataAdapter adp_medicament = new SqlDataAdapter(cmd_medicament);
+                    DataSet ds_medicament = new DataSet();
+                    adp_medicament.Fill(ds_medicament);
+
+                    if (ds_medicament.Tables[0].Rows.Count == 0)
+
+                    {
+                        return Json("Medicamentul căutat nu a fost găsit!");
+                    }
+                    else
+                    {
+                        return Json("" + ds_medicament.Tables[0].Rows[0].ItemArray[3] + "           " + ds_medicament.Tables[0].Rows[0].ItemArray[4] + "       " + ds_medicament.Tables[0].Rows[0].ItemArray[5]);
+                    }
+                }
+            }
+            catch (SqlException err)
+            {
+
+                throw new ApplicationException("Data error. " + err.Message.ToString());
+            }
+        }
     }
 }
