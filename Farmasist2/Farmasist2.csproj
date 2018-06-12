@@ -200,9 +200,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdMedicament.cs" />
-    <Compile Include="Controllers\DataAccessSQL.cs" />
-    <Compile Include="Controllers\FarmacieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,13 +207,13 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Farmacie.cs" />
-    <Compile Include="Models\FarmacieRezervariMedicamente.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Medicament.cs" />
+    <Compile Include="Models\Pacient.cs" />
+    <Compile Include="Models\Programare.cs" />
     <Compile Include="Models\Reteta.cs" />
-    <Compile Include="Modul Farmacie\CautareMedicament.cs" />
     <Compile Include="ModulMedic\CreareReteta.cs" />
+    <Compile Include="ModulMedic\Programarecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -247,8 +244,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\Farmacist\app.js" />
-    <Content Include="Scripts\Farmacist\ModulFarmacistController.js" />
     <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -258,7 +253,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Farmacist\ModulFarmacistService.js" />
     <Content Include="Scripts\ModulMedic_CautareMedicament.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />

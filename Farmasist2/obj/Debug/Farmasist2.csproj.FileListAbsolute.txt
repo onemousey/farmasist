@@ -246,87 +246,87 @@ G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\obj\Debug\Farmasist2.dll
 G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\obj\Debug\Farmasist2.pdb
 G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\bin\itextsharp.dll
 G:\MASTER\An 1\sem 2\GitHub\farmasist\Farmasist2\bin\itextsharp.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\ApplicationInsights.config
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\csc.exe
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\vbc.exe
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\VBCSCompiler.exe
-C:\Users\Antonia\farmasist\Farmasist2\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Antonia\farmasist\Farmasist2\bin\Farmasist2.dll.config
-C:\Users\Antonia\farmasist\Farmasist2\bin\Farmasist2.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Farmasist2.pdb
-C:\Users\Antonia\farmasist\Farmasist2\bin\Antlr3.Runtime.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\EntityFramework.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\EntityFramework.SqlServer.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\itextsharp.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.Web.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Newtonsoft.Json.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\Owin.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Helpers.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Mvc.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Optimization.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Razor.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.WebPages.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.WebPages.Razor.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\WebGrease.dll
-C:\Users\Antonia\farmasist\Farmasist2\bin\itextsharp.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.Web.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Helpers.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Mvc.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Optimization.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.Razor.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.WebPages.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\System.Web.WebPages.Razor.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Antlr3.Runtime.pdb
-C:\Users\Antonia\farmasist\Farmasist2\bin\Newtonsoft.Json.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\EntityFramework.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\EntityFramework.SqlServer.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Antonia\farmasist\Farmasist2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Antonia\farmasist\Farmasist2\obj\Debug\Farmasist2.csprojResolveAssemblyReference.cache
-C:\Users\Antonia\farmasist\Farmasist2\obj\Debug\Farmasist2.dll
-C:\Users\Antonia\farmasist\Farmasist2\obj\Debug\Farmasist2.pdb
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\ApplicationInsights.config
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\csc.exe
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\vbc.exe
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Farmasist2.dll.config
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Farmasist2.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Farmasist2.pdb
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Antlr3.Runtime.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\EntityFramework.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\EntityFramework.SqlServer.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\itextsharp.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.Web.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Newtonsoft.Json.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Owin.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Helpers.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Mvc.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Optimization.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Razor.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.WebPages.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\WebGrease.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\itextsharp.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.Web.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Helpers.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Mvc.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Optimization.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.Razor.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.WebPages.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Antlr3.Runtime.pdb
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Newtonsoft.Json.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\EntityFramework.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\EntityFramework.SqlServer.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\obj\Debug\Farmasist2.csprojResolveAssemblyReference.cache
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\obj\Debug\Farmasist2.dll
+C:\Users\Andreea\Documents\Visual Studio 2015\Projects\farmasist-master\farmasist-master\Farmasist2\obj\Debug\Farmasist2.pdb

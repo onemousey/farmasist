@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewBag.Title = "Contact";
 }
 <div class="row">
@@ -7,24 +7,132 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     @*Panel 1*@
-    <br /> </br>
     <div class="col-md-4">
         <!--Added containing column definition-->
+
         <div class="panel panel-primary">
-            <div class="panel-heading"><h4>Cauta Pacient</h4></div>
+            <div class="panel-heading"><h4>Pacient</h4></div>
             <div class="panel-body">
                 <div class="text-center">
+                    <div class="container">
+                        <!-- Large modal -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#CautarePacient">Cautare </button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#AdaugarePacient">Adaugare</button>
+                        <div id="CautarePacient" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
 
-                    <form asp-controller="CNP" asp-action="Contact" method="get">
-                        <p>
-                            CNP: <input type="text" name="">
-                            <input type="submit" value="Cautare" />
-                        </p>
-                    </form>
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Pacient</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+
+                                            <div class="form-group row">
+                                                <label for="numePacient" class="col-sm-4 col-form-label">CNP</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="cnp" placeholder="Introduceti cnp-ul">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row" id="cautare">
+                                                <div class="col-sm-12">
+                                                    <button type="button" align="right" width="49"
+                                                            class="btn btn-primary"
+                                                            onclick="CautarePacient($('#cnp').val())">
+                                                        Cauta Pacient
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="numePacient" class="col-sm-4 col-form-label">Fisa pacient</label>
+                                                        <textarea id="nume" name="message" class="form-control" rows="5" required="required" data-error="Please,leave us a message."></textarea>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="AdaugarePacient" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Adaugare</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">CNP</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="CnpPac">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Nume pacient</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="nume_pacient" placeholder="Popescu">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="prenumePacient" class="col-sm-4 col-form-label">Prenume pacient</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="prenume_pacient" placeholder="Ion">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Adresa</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="stradaPac" placeholder="Strada Lorena">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Grupa Sanguina</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="grupaSanguinaPac" placeholder="AB4">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="numePacient" class="col-sm-4 col-form-label">Alergii</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="AlergiiPac" placeholder="Ambrozie">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeMyModal">Close</button>
+                                        <button type="button"
+                                                class="btn btn-primary"
+                                                onclick="salvarePacient($('#CnpPac').val(),
+                                                                        $('#nume_pacient').val(),
+                                                                        $('#prenume_pacient').val(),
+                                                                        $('#stradaPac').val(),
+                                                                        $('#grupaSanguinaPac').val(),
+                                                                        $('#AlergiiPac').val())">
+                                            Salvare pacient
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
     @*Panel 2*@
     <div class="col-md-4">
@@ -38,16 +146,11 @@
                             <div class="card-header" id="headingOne">
                                 <div class="container">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default">Afisare</button>
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <button type="button" class="btn btn-default" onclick="getProgramare()">Afisare</button>
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" onclick="getProgramare()">
                                             <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Prima programare</a></li>
-                                            <li><a href="#">A doua programare</a></li>
-                                            <li><a href="#">A treia programare</a></li>
-                                            <li><a href="#">A patra programare</a></li>
-                                            <li><a href="#">A cincea programare</a></li>
+                                        <ul class="dropdown-menu" id="listaProgramari"></ul>
                                     </div>
                                 </div>
                             </div>
@@ -57,5 +160,49 @@
             </div>
         </div>
     </div>
+
     @Html.Partial("_CreareReteta")
-    </div>
+</div>
+
+<script>
+    function CautarePacient(cnp) {
+        var postData = new Object();
+        postData.cnp = cnp;
+
+        ajaxHelper.post("/Home/CautarePacient",
+        postData,
+        function (data) {
+            $("#nume").val(data)
+        },
+         function () { console.log("Ceva nu a mers") })
+    }
+
+    function salvarePacient(cnp, nume_pacient, prenume_pacient, StradaPac, grupaSanguinaPac, AlergiiPac) {
+        var postData = new Object();
+        postData.CNP = cnp;
+        postData.Nume = nume_pacient;
+        postData.Prenume = prenume_pacient;
+        postData.Adresa = StradaPac;
+        postData.Grupa_Sanguina = grupaSanguinaPac;
+        postData.Alergii = AlergiiPac;
+
+        ajaxHelper.post("/Home/AdaugarePacient",
+            postData,
+            function (data) {
+                $("#nume").val(data)
+            },
+            function () { console.log("Ceva nu a mers") })
+    }
+
+    function getProgramare() {
+        ajaxHelper.post("/Home/Programare", new Object(),
+            function (data) {
+                $(".programare").remove()
+                data.forEach(function (entry) {
+                    $("#listaProgramari").append('<li class="programare"><a href="#">' + entry.Nume + ' ' + entry.Data + '</a></li>')
+                });
+            },
+            function () { console.log("Ceva nu a mers bine!!!") })
+    }
+
+</script>
