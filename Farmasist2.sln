@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farmasist2", "Farmasist2\Farmasist2.csproj", "{BCDDE8C7-A57E-42A4-8D35-5B53DA4B2FA7}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "..\Baza_de_date_Andrada\repos\Database1\Database1.sqlproj", "{FDED0BAD-A6FC-456A-BF27-4A1EEC0364A3}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "D:\db-clone\Database1\Database1.sqlproj", "{FDED0BAD-A6FC-456A-BF27-4A1EEC0364A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
