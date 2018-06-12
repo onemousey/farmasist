@@ -3,34 +3,64 @@
 }
 <div class="row">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <script src="~/Scripts/ModulMedic_CautareMedicament.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-@*PANEL 1*@
-    <br/> <br/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @*PANEL 1*@
+    <br /> <br />
     <div class="col-md-4">
         <!-- Added containing column definition -->
         <div class="panel panel-primary">
             <div class="panel-heading"><h4>Date Pacient</h4></div>
             <div class="panel-body">
                 <div class="text-center">
-                    ​
-                   <img src="~/Pictures/bb.jpg" width="100" height="100">
-                    
-                    <br/>
-                        <dl class="dl-horizontal">
-                            <dt>Nume:</dt>
-                            <dd>Popescu</dd>
-                            <dt>Prenume:</dt>
-                            <dd>Maria</dd>
-                            <dt>Data naşterii:</dt>
-                            <dd>20 Ianuarie 1994</dd>
-                        </dl>
-                    <button type="button" class="btn btn-success">Descarcă fişă</button>
+
+                    <img src="~/Pictures/bb.jpg" width="100" height="100">
+                    <br>
+                    <br />
+
+                    <form>
+
+                        <div class="form-group row">
+                            <label for="numePacient" class="col-sm-4 col-form-label">CNP</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="cnp" placeholder="Introduceti cnp-ul">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" id="cautare">
+                            <div class="col-sm-12">
+                                <button type="button" align="center" width="49" style="margin-left: 22px"
+                                        class="btn btn-primary"
+                                        onclick="CautarePacient($('#cnp').val())">
+                                    Cauta Pacient
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <br />
+
+                                    <label for="numePacient" class="col-sm-8 col-form-label" style="margin-left: -65px">Fisa </label>
+
+                                    <textarea id="nume" align="center" name="message" class="form-control" rows="7" required="required" data-error="Please,leave us a message." style=" margin-left:28px"></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
                 </div>
             </div> <!-- Missing div here -->
         </div>
     </div>
 
-@*PANEL 2*@
+    @*PANEL 2*@
     <div class="col-md-4">
         <!-- Added containing column definition -->
         <div class="panel panel-primary">
@@ -73,92 +103,106 @@
         </div>
     </div>
 
-@*PANEL 3*@
+    @*PANEL 3*@
     <div class="col-md-4">
         <!-- Added containing column definition -->
         <div class="panel panel-primary">
             <div class="panel-heading"><h4>Progrămarile Pacientului</h4></div>
             <div class="panel-body">
-              <div class="container">
-	<div class="row">
-        <div class="text-center">
-            <div class="span12">
-                <table class="table-condensed table-bordered table-striped" align="center">
-                    <thead>
-                        <tr>
-                            <th colspan="7">
-                                <span class="btn-group">
-                                    <a class="btn"><i class="icon-chevron-left"></i></a>
-                                    <a class="btn active">Februarie 2018</a>
-                                    <a class="btn"><i class="icon-chevron-right"></i></a>
-                                </span>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Su</th>
-                            <th>Mo</th>
-                            <th>Tu</th>
-                            <th>We</th>
-                            <th>Th</th>
-                            <th>Fr</th>
-                            <th>Sa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="muted">28</td>
-                            <td class="muted">29</td>
-                            <td class="muted">30</td>
-                            <td class="muted">31</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>19</td>
-                            <td class="btn-primary"><strong>20</strong></td>
-                            <td>21</td>
-                            <td>22</td>
-                            <td>23</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td>28</td>
-                            <td class="muted">1</td>
-                            <td class="muted">2</td>
-                            <td class="muted">3</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center">
+                            <div class="span12">
+                                <table class="table-condensed table-bordered table-striped" align="center">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7">
+                                                <span class="btn-group">
+                                                    <a class="btn"><i class="icon-chevron-left"></i></a>
+                                                    <a class="btn active">Februarie 2018</a>
+                                                    <a class="btn"><i class="icon-chevron-right"></i></a>
+                                                </span>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Su</th>
+                                            <th>Mo</th>
+                                            <th>Tu</th>
+                                            <th>We</th>
+                                            <th>Th</th>
+                                            <th>Fr</th>
+                                            <th>Sa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="muted">28</td>
+                                            <td class="muted">29</td>
+                                            <td class="muted">30</td>
+                                            <td class="muted">31</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>12</td>
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td>15</td>
+                                            <td>16</td>
+                                            <td>17</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18</td>
+                                            <td>19</td>
+                                            <td class="btn-primary"><strong>20</strong></td>
+                                            <td>21</td>
+                                            <td>22</td>
+                                            <td>23</td>
+                                            <td>24</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25</td>
+                                            <td>26</td>
+                                            <td>27</td>
+                                            <td>28</td>
+                                            <td class="muted">1</td>
+                                            <td class="muted">2</td>
+                                            <td class="muted">3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-	</div>
-</div> 
-            </div>
     </div>
 </div>
-</div>
+
+<script>
+    function CautarePacient(cnp) {
+        var postData = new Object();
+        postData.cnp = cnp;
+
+        ajaxHelper.post("/Home/CautarePacient",
+        postData,
+        function (data) {
+            $("#nume").val(data)
+        },
+         function () { console.log("Ceva nu a mers") })
+    }
+</script>
 
 
