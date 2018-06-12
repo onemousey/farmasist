@@ -74,7 +74,7 @@ namespace Farmasist2.Controllers
                     if (ds_medicament.Tables[0].Rows.Count == 0)
 
                     {
-                        return Json("Medicamentul cautat nu se afla in baza de date!");
+                        return Json("Medicamentul căutat nu a fost găsit!");
                     }
                     else
                     {
