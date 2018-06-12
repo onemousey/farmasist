@@ -146,17 +146,11 @@
                             <div class="card-header" id="headingOne">
                                 <div class="container">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default">Afisare</button>
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <button type="button" class="btn btn-default" onclick="getProgramare()">Afisare</button>
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" onclick="getProgramare()">
                                             <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Prima programare</a></li>
-                                            <li><a href="#">A doua programare</a></li>
-                                            <li><a href="#">A treia programare</a></li>
-                                            <li><a href="#">A patra programare</a></li>
-                                            <li><a href="#">A cincea programare</a></li>
-                                        </ul>
+                                        <ul class="dropdown-menu" id="listaProgramari"></ul>
                                     </div>
                                 </div>
                             </div>
@@ -198,6 +192,17 @@
                 $("#nume").val(data)
             },
             function () { console.log("Ceva nu a mers") })
+    }
+
+    function getProgramare() {
+        ajaxHelper.post("/Home/Programare", new Object(),
+            function (data) {
+                $(".programare").remove()
+                data.forEach(function (entry) {
+                    $("#listaProgramari").append('<li class="programare"><a href="#">' + entry.Nume + ' ' + entry.Data + '</a></li>')
+                });
+            },
+            function () { console.log("Ceva nu a mers bine!!!") })
     }
 
 </script>

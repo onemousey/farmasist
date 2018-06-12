@@ -119,5 +119,11 @@ namespace Farmasist2.Controllers
                 throw new ApplicationException("Data error. " + err.Message.ToString());
             }
         }
+        [HttpPost]
+        public ActionResult Programare()
+        {
+            var result = Json(Programarecs.getProgramare());
+            return result;
+        }
     }
 }
